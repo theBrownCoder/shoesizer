@@ -1,0 +1,28 @@
+html,
+body {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    /* font-family: 'Oxanium', cursive; */
+    font-family: 'Permanent Marker', cursive;
+}
+
+h1 {
+    font-size: 6ch;
+    text-align: center;
+    margin: 1ch;
+    border: 2px tomato solid;
+}
+
+.dropdown {
+    padding-left: 5ch;
+    border: 2px tomato solid;
+}
+
+#chart {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 5ch;
+}
