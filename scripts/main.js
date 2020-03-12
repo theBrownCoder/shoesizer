@@ -1,3 +1,4 @@
+// Size Group Wiring
 const womens = document.getElementById('wgroup');
 const mens = document.getElementById('mgroup');
 const littlekids = document.getElementById('lkgroup');
@@ -6,6 +7,7 @@ const toddlers = document.getElementById('tgroup');
 const infants = document.getElementById('igroup');
 const chart = document.getElementById('chart');
 
+// Size Groups
 const womenSizes = [
   { usCan: 4, uk: 2, eu: 35, in: 8.2, cm: 20.8 },
   { usCan: 4.5, uk: 2.5, eu: 35, in: 8.3, cm: 21.3 },
@@ -93,6 +95,7 @@ const infantSizes = [
   { usCan: 3, uk: 2, eu: 18, in: 4.1, cm: 10.5 },
 ];
 
+// Size Group Click Listeners
 womens.addEventListener('click', e => {
   while (chart.firstChild) {
     chart.removeChild(chart.firstChild);
