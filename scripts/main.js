@@ -1,16 +1,11 @@
 const womens = document.getElementById('wgroup');
-
 const mens = document.getElementById('mgroup');
-
 const littlekids = document.getElementById('lkgroup');
-littlekids.addEventListener('select', e => {});
 const bigkids = document.getElementById('bkgroup');
-bigkids.addEventListener('select', e => {});
 const toddlers = document.getElementById('tgroup');
-toddlers.addEventListener('select', e => {});
-const infants = document.getElementById('size_group');
-infants.addEventListener('select', e => {});
+const infants = document.getElementById('igroup');
 const chart = document.getElementById('chart');
+
 const womenSizes = [
   { usCan: 4, uk: 2, eu: 35, in: 8.2, cm: 20.8 },
   { usCan: 4.5, uk: 2.5, eu: 35, in: 8.3, cm: 21.3 },
@@ -49,6 +44,54 @@ const menSizes = [
   { usCan: 15, uk: 14.5, eu: 48, in: 12.2, cm: 31 },
   { usCan: 16, uk: 15.5, eu: 49, in: 12.5, cm: 31.8 },
 ];
+const littleKidSizes = [
+  { usCan: 10.5, uk: 9.5, eu: 27, in: 6.6, cm: 16.8 },
+  { usCan: 11, uk: 10, eu: 28, in: 6.8, cm: 17.1 },
+  { usCan: 11.5, uk: 10.5, eu: 29, in: 7, cm: 17.8 },
+  { usCan: 12, uk: 11, eu: 30, in: 7.1, cm: 18.1 },
+  { usCan: 12.5, uk: 11.5, eu: 30, in: 7.3, cm: 18.4 },
+  { usCan: 13, uk: 12, eu: 31, in: 7.5, cm: 19.1 },
+  { usCan: 13.5, uk: 12.5, eu: 31, in: 7.6, cm: 19.4 },
+  { usCan: 1, uk: 13, eu: 32, in: 7.8, cm: 19.7 },
+  { usCan: 1.5, uk: 14, eu: 33, in: 8, cm: 20.3 },
+  { usCan: 2, uk: 1, eu: 33, in: 8.1, cm: 20.6 },
+  { usCan: 2.5, uk: 1.5, eu: 34, in: 8.3, cm: 21 },
+  { usCan: 3, uk: 2, eu: 34, in: 8.5, cm: 21.6 },
+];
+const bigKidSizes = [
+  { usCan: 3.5, uk: 2.5, eu: 35, in: 8.6, cm: 21.9 },
+  { usCan: 4, uk: 3, eu: 36, in: 8.8, cm: 22.2 },
+  { usCan: 4.5, uk: 3.5, eu: 36, in: 9, cm: 22.9 },
+  { usCan: 5, uk: 4, eu: 37, in: 9.1, cm: 23.2 },
+  { usCan: 5.5, uk: 4.5, eu: 37, in: 9.3, cm: 23.5 },
+  { usCan: 6, uk: 5, eu: 38, in: 9.5, cm: 24.1 },
+  { usCan: 6.5, uk: 5.5, eu: 38, in: 9.6, cm: 24.4 },
+  { usCan: 7, uk: 6, eu: 39, in: 9.8, cm: 24.8 },
+];
+const toddlerSizes = [
+  { usCan: 3.5, uk: 19, eu: 2.5, in: 4.3, cm: 10.8 },
+  { usCan: 4, uk: 19, eu: 3, in: 4.5, cm: 11.4 },
+  { usCan: 4.5, uk: 20, eu: 3.5, in: 4.6, cm: 11.7 },
+  { usCan: 5, uk: 20, eu: 4, in: 4.8, cm: 12.1 },
+  { usCan: 5.5, uk: 21, eu: 4.5, in: 5, cm: 12.7 },
+  { usCan: 6, uk: 22, eu: 5, in: 5.1, cm: 13 },
+  { usCan: 6.5, uk: 22, eu: 5.5, in: 5.3, cm: 13.3 },
+  { usCan: 7, uk: 23, eu: 6, in: 5.5, cm: 14 },
+  { usCan: 7.5, uk: 23, eu: 6.5, in: 5.6, cm: 14.3 },
+  { usCan: 8, uk: 24, eu: 7, in: 5.8, cm: 14.6 },
+  { usCan: 8.5, uk: 25, eu: 7.5, in: 6, cm: 15.2 },
+  { usCan: 9, uk: 25, eu: 8, in: 6.1, cm: 15.6 },
+  { usCan: 9.5, uk: 26, eu: 8.5, in: 6.3, cm: 15.9 },
+  { usCan: 10, uk: 27, eu: 9, in: 6.5, cm: 16.5 },
+];
+const infantSizes = [
+  { usCan: 0, uk: 0, eu: 15, in: 3.1, cm: 7.9 },
+  { usCan: 1, uk: 0.5, eu: 16, in: 3.5, cm: 8.9 },
+  { usCan: 1.5, uk: 1, eu: 17, in: 3.6, cm: 9.2 },
+  { usCan: 2, uk: 1, eu: 17, in: 3.8, cm: 9.5 },
+  { usCan: 2.5, uk: 1.5, eu: 18, in: 4, cm: 10.2 },
+  { usCan: 3, uk: 2, eu: 18, in: 4.1, cm: 10.5 },
+];
 
 womens.addEventListener('click', e => {
   while (chart.firstChild) {
@@ -56,16 +99,18 @@ womens.addEventListener('click', e => {
   }
   womenSizes.forEach(size => {
     var div = document.createElement('div');
-    div.style.width = '50px';
-    div.style.height = '50px';
+    div.style.width = '150px';
+    div.style.height = '150px';
     div.style.border = '2px tomato solid';
     div.textContent = `${size.usCan}`;
     div.style.textAlign = 'center';
+    div.style.margin = '1.5ch';
     div.style.display = 'flex';
     div.style.flexWrap = 'wrap';
     chart.append(div);
   });
 });
+
 mens.addEventListener('click', e => {
   while (chart.firstChild) {
     chart.removeChild(chart.firstChild);
@@ -75,9 +120,81 @@ mens.addEventListener('click', e => {
     div.style.width = '150px';
     div.style.height = '150px';
     div.style.border = '2px tomato solid';
-    div.style.margin = '1.5px';
     div.textContent = `${size.usCan}`;
     div.style.textAlign = 'center';
+    div.style.margin = '1.5ch';
+    div.style.display = 'flex';
+    div.style.flexWrap = 'wrap';
+    chart.append(div);
+  });
+});
+
+littlekids.addEventListener('click', e => {
+  while (chart.firstChild) {
+    chart.removeChild(chart.firstChild);
+  }
+  littleKidSizes.forEach(size => {
+    var div = document.createElement('div');
+    div.style.width = '150px';
+    div.style.height = '150px';
+    div.style.border = '2px tomato solid';
+    div.textContent = `${size.usCan}`;
+    div.style.textAlign = 'center';
+    div.style.margin = '1.5ch';
+    div.style.display = 'flex';
+    div.style.flexWrap = 'wrap';
+    chart.append(div);
+  });
+});
+
+bigkids.addEventListener('click', e => {
+  while (chart.firstChild) {
+    chart.removeChild(chart.firstChild);
+  }
+  bigKidSizes.forEach(size => {
+    var div = document.createElement('div');
+    div.style.width = '150px';
+    div.style.height = '150px';
+    div.style.border = '2px tomato solid';
+    div.textContent = `${size.usCan}`;
+    div.style.textAlign = 'center';
+    div.style.margin = '1.5ch';
+    div.style.display = 'flex';
+    div.style.flexWrap = 'wrap';
+    chart.append(div);
+  });
+});
+
+toddlers.addEventListener('click', e => {
+  while (chart.firstChild) {
+    chart.removeChild(chart.firstChild);
+  }
+  toddlerSizes.forEach(size => {
+    var div = document.createElement('div');
+    div.style.width = '150px';
+    div.style.height = '150px';
+    div.style.border = '2px tomato solid';
+    div.textContent = `${size.usCan}`;
+    div.style.textAlign = 'center';
+    div.style.margin = '1.5ch';
+    div.style.display = 'flex';
+    div.style.flexWrap = 'wrap';
+    chart.append(div);
+  });
+});
+
+infants.addEventListener('click', e => {
+  while (chart.firstChild) {
+    chart.removeChild(chart.firstChild);
+  }
+  infantSizes.forEach(size => {
+    var div = document.createElement('div');
+    div.style.width = '150px';
+    div.style.height = '150px';
+    div.style.border = '2px tomato solid';
+    div.textContent = `${size.usCan}`;
+    div.style.textAlign = 'center';
+    div.style.margin = '1.5ch';
     div.style.display = 'flex';
     div.style.flexWrap = 'wrap';
     chart.append(div);
