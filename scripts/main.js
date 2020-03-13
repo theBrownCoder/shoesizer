@@ -102,8 +102,8 @@ womens.addEventListener('click', e => {
   }
   womenSizes.forEach(size => {
     var div = document.createElement('div');
-    div.style.width = '150px';
-    div.style.height = '150px';
+    div.style.width = '100px';
+    div.style.height = '100px';
     div.style.border = '2px tomato solid';
     div.textContent = `${size.usCan}`;
     div.style.textAlign = 'center';
@@ -120,8 +120,8 @@ mens.addEventListener('click', e => {
   }
   menSizes.forEach(size => {
     var div = document.createElement('div');
-    div.style.width = '150px';
-    div.style.height = '150px';
+    div.style.width = '100px';
+    div.style.height = '100px';
     div.style.border = '2px tomato solid';
     div.textContent = `${size.usCan}`;
     div.style.textAlign = 'center';
@@ -138,8 +138,8 @@ littlekids.addEventListener('click', e => {
   }
   littleKidSizes.forEach(size => {
     var div = document.createElement('div');
-    div.style.width = '150px';
-    div.style.height = '150px';
+    div.style.width = '100px';
+    div.style.height = '100px';
     div.style.border = '2px tomato solid';
     div.textContent = `${size.usCan}`;
     div.style.textAlign = 'center';
@@ -156,8 +156,8 @@ bigkids.addEventListener('click', e => {
   }
   bigKidSizes.forEach(size => {
     var div = document.createElement('div');
-    div.style.width = '150px';
-    div.style.height = '150px';
+    div.style.width = '100px';
+    div.style.height = '100px';
     div.style.border = '2px tomato solid';
     div.textContent = `${size.usCan}`;
     div.style.textAlign = 'center';
@@ -174,8 +174,8 @@ toddlers.addEventListener('click', e => {
   }
   toddlerSizes.forEach(size => {
     var div = document.createElement('div');
-    div.style.width = '150px';
-    div.style.height = '150px';
+    div.style.width = '100px';
+    div.style.height = '100px';
     div.style.border = '2px tomato solid';
     div.textContent = `${size.usCan}`;
     div.style.textAlign = 'center';
@@ -192,8 +192,8 @@ infants.addEventListener('click', e => {
   }
   infantSizes.forEach(size => {
     var div = document.createElement('div');
-    div.style.width = '150px';
-    div.style.height = '150px';
+    div.style.width = '100px';
+    div.style.height = '100px';
     div.style.border = '2px tomato solid';
     div.textContent = `${size.usCan}`;
     div.style.textAlign = 'center';
