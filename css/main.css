@@ -23,17 +23,16 @@ h1 {
 
 select {
     min-width: 180px;
-    border: 1px tomato solid;
-
+    border: 1px black solid;
+    border-radius: 5px;
 }
 
 #chart {
     display: flex;
     flex-wrap: wrap;
-    border: 1px blue solid;
     padding-left: 6ch;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 20%;
+    margin-right: 20%;
 
 }
 
@@ -44,6 +43,21 @@ select {
 #chart>div:hover {
     color: beige;
     background-color: tomato;
+}
+
+#unit-button {
+    text-align: center;
+
+    color: black;
+
+}
+
+button {
+    width: 50px;
+    font-family: 'Permanent Marker', cursive;
+    border: 0.5px black solid;
+    border-radius: 5px;
+    margin-right: 8px;
 }
 
 .size-box {
