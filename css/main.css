@@ -2,23 +2,23 @@ html,
 body {
     padding: 0;
     margin: 0;
+
 }
 
 body {
     /* font-family: 'Oxanium', cursive; */
     font-family: 'Permanent Marker', cursive;
+    background-color: #fff;
 }
 
 h1 {
     font-size: 6ch;
     text-align: center;
     margin: 1ch;
-    border: 2px tomato solid;
 }
 
 #size-dropdown {
     text-align: center;
-    border: 2px tomato solid;
 }
 
 select {
@@ -35,4 +35,23 @@ select {
     margin-left: auto;
     margin-right: auto;
 
+}
+
+#chart>div {
+    background-color: transparent;
+}
+
+#chart>div:hover {
+    color: beige;
+    background-color: tomato;
+}
+
+.size-box {
+    background-color: transparent;
+    color: tomato;
+}
+
+.size-box:hover {
+    background-color: tomato;
+    color: beige;
 }
