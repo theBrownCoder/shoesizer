@@ -11,9 +11,10 @@ const unituk = document.getElementById('unituk');
 const uniteu = document.getElementById('uniteu');
 const unitin = document.getElementById('unitin');
 const unitcm = document.getElementById('unitcm');
+const color_selected = '#2ba84a';
 
 var customer = 'w'; // The page defaults to the first Customer option in the list
-unitus.style.backgroundColor = '#2ba84a'; // The page defaults to US/Can size
+unitus.style.backgroundColor = color_selected; // The page defaults to US/Can size
 
 // Size Groups
 const womenSizes = [
