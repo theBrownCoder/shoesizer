@@ -25,6 +25,8 @@ select {
     min-width: 180px;
     border: 1px black solid;
     border-radius: 5px;
+    text-align: center;
+    margin-bottom: 2%;
 }
 
 #chart {
@@ -38,6 +40,7 @@ select {
 
 #chart>div {
     background-color: transparent;
+    text-align: center;
 }
 
 #chart>div:hover {
@@ -47,9 +50,7 @@ select {
 
 #unit-button {
     text-align: center;
-
     color: black;
-
 }
 
 button {
@@ -58,6 +59,7 @@ button {
     border: 0.5px black solid;
     border-radius: 5px;
     margin-right: 8px;
+    margin-bottom: 2%;
 }
 
 .size-box {
