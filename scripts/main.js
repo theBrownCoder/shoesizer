@@ -12,6 +12,7 @@ const uniteu = document.getElementById('uniteu');
 const unitin = document.getElementById('unitin');
 const unitcm = document.getElementById('unitcm');
 const color_selected = '#2ba84a';
+const color_unselected = 'transparent';
 
 var customer = 'w'; // The page defaults to the first Customer option in the list
 unitus.style.backgroundColor = color_selected; // The page defaults to US/Can size
@@ -222,6 +223,12 @@ infants.addEventListener('click', e => {
 
 // Conversion Button Click Listeners
 unitus.addEventListener('click', e => {
+  unitus.style.backgroundColor = color_selected;
+  unituk.style.backgroundColor = color_unselected;
+  uniteu.style.backgroundColor = color_unselected;
+  unitin.style.backgroundColor = color_unselected;
+  unitcm.style.backgroundColor = color_unselected;
+
   console.log(customer);
   let u = unitus.innerHTML;
   console.log(u);
@@ -340,6 +347,12 @@ unitus.addEventListener('click', e => {
   }
 });
 unituk.addEventListener('click', e => {
+  unitus.style.backgroundColor = color_unselected;
+  unituk.style.backgroundColor = color_selected;
+  uniteu.style.backgroundColor = color_unselected;
+  unitin.style.backgroundColor = color_unselected;
+  unitcm.style.backgroundColor = color_unselected;
+
   console.log(customer);
   let u = unituk.innerHTML;
   console.log(u);
@@ -458,6 +471,12 @@ unituk.addEventListener('click', e => {
   }
 });
 uniteu.addEventListener('click', e => {
+  unitus.style.backgroundColor = color_unselected;
+  unituk.style.backgroundColor = color_unselected;
+  uniteu.style.backgroundColor = color_selected;
+  unitin.style.backgroundColor = color_unselected;
+  unitcm.style.backgroundColor = color_unselected;
+
   console.log(customer);
   let u = unitus.innerHTML;
   console.log(u);
@@ -576,6 +595,12 @@ uniteu.addEventListener('click', e => {
   }
 });
 unitin.addEventListener('click', e => {
+  unitus.style.backgroundColor = color_unselected;
+  unituk.style.backgroundColor = color_unselected;
+  uniteu.style.backgroundColor = color_unselected;
+  unitin.style.backgroundColor = color_selected;
+  unitcm.style.backgroundColor = color_unselected;
+
   console.log(customer);
   let u = unitus.innerHTML;
   console.log(u);
@@ -694,6 +719,12 @@ unitin.addEventListener('click', e => {
   }
 });
 unitcm.addEventListener('click', e => {
+  unitus.style.backgroundColor = color_unselected;
+  unituk.style.backgroundColor = color_unselected;
+  uniteu.style.backgroundColor = color_unselected;
+  unitin.style.backgroundColor = color_unselected;
+  unitcm.style.backgroundColor = color_selected;
+
   console.log(customer);
   let u = unitus.innerHTML;
   console.log(u);
