@@ -6,8 +6,14 @@ const bigkids = document.getElementById('bkgroup');
 const toddlers = document.getElementById('tgroup');
 const infants = document.getElementById('igroup');
 const chart = document.getElementById('chart');
-const unit = document.getElementById('unit');
-var customer = '';
+const unitus = document.getElementById('unitus');
+const unituk = document.getElementById('unituk');
+const uniteu = document.getElementById('uniteu');
+const unitin = document.getElementById('unitin');
+const unitcm = document.getElementById('unitcm');
+
+var customer = 'w'; // The page defaults to the first Customer option in the list
+unitus.style.backgroundColor = '#2ba84a'; // The page defaults to US/Can size
 
 // Size Groups
 const womenSizes = [
@@ -117,7 +123,6 @@ womens.addEventListener('click', e => {
     chart.append(div);
   });
 });
-
 mens.addEventListener('click', e => {
   while (chart.firstChild) {
     chart.removeChild(chart.firstChild);
@@ -137,7 +142,6 @@ mens.addEventListener('click', e => {
     chart.append(div);
   });
 });
-
 littlekids.addEventListener('click', e => {
   while (chart.firstChild) {
     chart.removeChild(chart.firstChild);
@@ -157,7 +161,6 @@ littlekids.addEventListener('click', e => {
     chart.append(div);
   });
 });
-
 bigkids.addEventListener('click', e => {
   while (chart.firstChild) {
     chart.removeChild(chart.firstChild);
@@ -177,7 +180,6 @@ bigkids.addEventListener('click', e => {
     chart.append(div);
   });
 });
-
 toddlers.addEventListener('click', e => {
   while (chart.firstChild) {
     chart.removeChild(chart.firstChild);
@@ -197,7 +199,6 @@ toddlers.addEventListener('click', e => {
     chart.append(div);
   });
 });
-
 infants.addEventListener('click', e => {
   while (chart.firstChild) {
     chart.removeChild(chart.firstChild);
@@ -219,452 +220,592 @@ infants.addEventListener('click', e => {
 });
 
 // Conversion Button Click Listeners
-
-unit.addEventListener('click', e => {
+unitus.addEventListener('click', e => {
   console.log(customer);
-  let u = unit.innerHTML;
+  let u = unitus.innerHTML;
   console.log(u);
-  switch (u) {
-    case 'UK':
-      if (customer === 'w') {
-        while (chart.firstChild) {
-          chart.removeChild(chart.firstChild);
-        }
-        womenSizes.forEach(size => {
-          var div = document.createElement('div');
-          div.style.width = '100px';
-          div.style.height = '100px';
-          div.style.border = '2px tomato solid';
-          div.textContent = `${size.uk}`;
-          div.style.fontSize = 'x-large';
-          div.style.textAlign = 'right';
-          div.style.margin = '1.5ch';
-          div.style.display = 'flex';
-          div.style.flexWrap = 'wrap';
-          chart.append(div);
-        });
-        break;
-      } else if (customer === 'm') {
-        while (chart.firstChild) {
-          chart.removeChild(chart.firstChild);
-        }
-        menSizes.forEach(size => {
-          var div = document.createElement('div');
-          div.style.width = '100px';
-          div.style.height = '100px';
-          div.style.border = '2px tomato solid';
-          div.textContent = `${size.uk}`;
-          div.style.fontSize = 'x-large';
-          div.style.textAlign = 'right';
-          div.style.margin = '1.5ch';
-          div.style.display = 'flex';
-          div.style.flexWrap = 'wrap';
-          chart.append(div);
-        });
-        break;
-      } else if (customer === 'l') {
-        while (chart.firstChild) {
-          chart.removeChild(chart.firstChild);
-        }
-        littleKidSizes.forEach(size => {
-          var div = document.createElement('div');
-          div.style.width = '100px';
-          div.style.height = '100px';
-          div.style.border = '2px tomato solid';
-          div.textContent = `${size.uk}`;
-          div.style.fontSize = 'x-large';
-          div.style.textAlign = 'right';
-          div.style.margin = '1.5ch';
-          div.style.display = 'flex';
-          div.style.flexWrap = 'wrap';
-          chart.append(div);
-        });
-        break;
-      } else if (customer === 'b') {
-        while (chart.firstChild) {
-          chart.removeChild(chart.firstChild);
-        }
-        bigKidSizes.forEach(size => {
-          var div = document.createElement('div');
-          div.style.width = '100px';
-          div.style.height = '100px';
-          div.style.border = '2px tomato solid';
-          div.textContent = `${size.uk}`;
-          div.style.fontSize = 'x-large';
-          div.style.textAlign = 'right';
-          div.style.margin = '1.5ch';
-          div.style.display = 'flex';
-          div.style.flexWrap = 'wrap';
-          chart.append(div);
-        });
-        break;
-      } else if (customer === 't') {
-        while (chart.firstChild) {
-          chart.removeChild(chart.firstChild);
-        }
-        toddlerSizes.forEach(size => {
-          var div = document.createElement('div');
-          div.style.width = '100px';
-          div.style.height = '100px';
-          div.style.border = '2px tomato solid';
-          div.textContent = `${size.uk}`;
-          div.style.fontSize = 'x-large';
-          div.style.textAlign = 'right';
-          div.style.margin = '1.5ch';
-          div.style.display = 'flex';
-          div.style.flexWrap = 'wrap';
-          chart.append(div);
-        });
-        break;
-      } else if (customer === 'i') {
-        while (chart.firstChild) {
-          chart.removeChild(chart.firstChild);
-        }
-        infantSizes.forEach(size => {
-          var div = document.createElement('div');
-          div.style.width = '100px';
-          div.style.height = '100px';
-          div.style.border = '2px tomato solid';
-          div.textContent = `${size.uk}`;
-          div.style.fontSize = 'x-large';
-          div.style.textAlign = 'right';
-          div.style.margin = '1.5ch';
-          div.style.display = 'flex';
-          div.style.flexWrap = 'wrap';
-          chart.append(div);
-        });
+  switch (customer) {
+    case 'w':
+      while (chart.firstChild) {
+        chart.removeChild(chart.firstChild);
       }
+      womenSizes.forEach(size => {
+        var div = document.createElement('div');
+        div.style.width = '100px';
+        div.style.height = '100px';
+        div.style.border = '2px tomato solid';
+        div.textContent = `${size.usCan}`;
+        div.style.fontSize = 'x-large';
+        div.style.textAlign = 'right';
+        div.style.margin = '1.5ch';
+        div.style.display = 'flex';
+        div.style.flexWrap = 'wrap';
+        chart.append(div);
+      });
       break;
-    case 'EUR':
-      if (customer === 'w') {
-        while (chart.firstChild) {
-          chart.removeChild(chart.firstChild);
-        }
-        womenSizes.forEach(size => {
-          var div = document.createElement('div');
-          div.style.width = '100px';
-          div.style.height = '100px';
-          div.style.border = '2px tomato solid';
-          div.textContent = `${size.eu}`;
-          div.style.fontSize = 'x-large';
-          div.style.textAlign = 'right';
-          div.style.margin = '1.5ch';
-          div.style.display = 'flex';
-          div.style.flexWrap = 'wrap';
-          chart.append(div);
-        });
-        break;
-      } else if (customer === 'm') {
-        while (chart.firstChild) {
-          chart.removeChild(chart.firstChild);
-        }
-        menSizes.forEach(size => {
-          var div = document.createElement('div');
-          div.style.width = '100px';
-          div.style.height = '100px';
-          div.style.border = '2px tomato solid';
-          div.textContent = `${size.eu}`;
-          div.style.fontSize = 'x-large';
-          div.style.textAlign = 'right';
-          div.style.margin = '1.5ch';
-          div.style.display = 'flex';
-          div.style.flexWrap = 'wrap';
-          chart.append(div);
-        });
-        break;
-      } else if (customer === 'l') {
-        while (chart.firstChild) {
-          chart.removeChild(chart.firstChild);
-        }
-        littleKidSizes.forEach(size => {
-          var div = document.createElement('div');
-          div.style.width = '100px';
-          div.style.height = '100px';
-          div.style.border = '2px tomato solid';
-          div.textContent = `${size.eu}`;
-          div.style.fontSize = 'x-large';
-          div.style.textAlign = 'right';
-          div.style.margin = '1.5ch';
-          div.style.display = 'flex';
-          div.style.flexWrap = 'wrap';
-          chart.append(div);
-        });
-        break;
-      } else if (customer === 'b') {
-        while (chart.firstChild) {
-          chart.removeChild(chart.firstChild);
-        }
-        bigKidSizes.forEach(size => {
-          var div = document.createElement('div');
-          div.style.width = '100px';
-          div.style.height = '100px';
-          div.style.border = '2px tomato solid';
-          div.textContent = `${size.eu}`;
-          div.style.fontSize = 'x-large';
-          div.style.textAlign = 'right';
-          div.style.margin = '1.5ch';
-          div.style.display = 'flex';
-          div.style.flexWrap = 'wrap';
-          chart.append(div);
-        });
-        break;
-      } else if (customer === 't') {
-        while (chart.firstChild) {
-          chart.removeChild(chart.firstChild);
-        }
-        toddlerSizes.forEach(size => {
-          var div = document.createElement('div');
-          div.style.width = '100px';
-          div.style.height = '100px';
-          div.style.border = '2px tomato solid';
-          div.textContent = `${size.eu}`;
-          div.style.fontSize = 'x-large';
-          div.style.textAlign = 'right';
-          div.style.margin = '1.5ch';
-          div.style.display = 'flex';
-          div.style.flexWrap = 'wrap';
-          chart.append(div);
-        });
-        break;
-      } else if (customer === 'i') {
-        while (chart.firstChild) {
-          chart.removeChild(chart.firstChild);
-        }
-        infantSizes.forEach(size => {
-          var div = document.createElement('div');
-          div.style.width = '100px';
-          div.style.height = '100px';
-          div.style.border = '2px tomato solid';
-          div.textContent = `${size.eu}`;
-          div.style.fontSize = 'x-large';
-          div.style.textAlign = 'right';
-          div.style.margin = '1.5ch';
-          div.style.display = 'flex';
-          div.style.flexWrap = 'wrap';
-          chart.append(div);
-        });
+    case 'm':
+      while (chart.firstChild) {
+        chart.removeChild(chart.firstChild);
       }
+      menSizes.forEach(size => {
+        var div = document.createElement('div');
+        div.style.width = '100px';
+        div.style.height = '100px';
+        div.style.border = '2px tomato solid';
+        div.textContent = `${size.usCan}`;
+        div.style.fontSize = 'x-large';
+        div.style.textAlign = 'right';
+        div.style.margin = '1.5ch';
+        div.style.display = 'flex';
+        div.style.flexWrap = 'wrap';
+        chart.append(div);
+      });
       break;
-    case 'IN':
-      if (customer === 'w') {
-        while (chart.firstChild) {
-          chart.removeChild(chart.firstChild);
-        }
-        womenSizes.forEach(size => {
-          var div = document.createElement('div');
-          div.style.width = '100px';
-          div.style.height = '100px';
-          div.style.border = '2px tomato solid';
-          div.textContent = `${size.in}`;
-          div.style.fontSize = 'x-large';
-          div.style.textAlign = 'right';
-          div.style.margin = '1.5ch';
-          div.style.display = 'flex';
-          div.style.flexWrap = 'wrap';
-          chart.append(div);
-        });
-        break;
-      } else if (customer === 'm') {
-        while (chart.firstChild) {
-          chart.removeChild(chart.firstChild);
-        }
-        menSizes.forEach(size => {
-          var div = document.createElement('div');
-          div.style.width = '100px';
-          div.style.height = '100px';
-          div.style.border = '2px tomato solid';
-          div.textContent = `${size.in}`;
-          div.style.fontSize = 'x-large';
-          div.style.textAlign = 'right';
-          div.style.margin = '1.5ch';
-          div.style.display = 'flex';
-          div.style.flexWrap = 'wrap';
-          chart.append(div);
-        });
-        break;
-      } else if (customer === 'l') {
-        while (chart.firstChild) {
-          chart.removeChild(chart.firstChild);
-        }
-        littleKidSizes.forEach(size => {
-          var div = document.createElement('div');
-          div.style.width = '100px';
-          div.style.height = '100px';
-          div.style.border = '2px tomato solid';
-          div.textContent = `${size.in}`;
-          div.style.fontSize = 'x-large';
-          div.style.textAlign = 'right';
-          div.style.margin = '1.5ch';
-          div.style.display = 'flex';
-          div.style.flexWrap = 'wrap';
-          chart.append(div);
-        });
-        break;
-      } else if (customer === 'b') {
-        while (chart.firstChild) {
-          chart.removeChild(chart.firstChild);
-        }
-        bigKidSizes.forEach(size => {
-          var div = document.createElement('div');
-          div.style.width = '100px';
-          div.style.height = '100px';
-          div.style.border = '2px tomato solid';
-          div.textContent = `${size.in}`;
-          div.style.fontSize = 'x-large';
-          div.style.textAlign = 'right';
-          div.style.margin = '1.5ch';
-          div.style.display = 'flex';
-          div.style.flexWrap = 'wrap';
-          chart.append(div);
-        });
-        break;
-      } else if (customer === 't') {
-        while (chart.firstChild) {
-          chart.removeChild(chart.firstChild);
-        }
-        toddlerSizes.forEach(size => {
-          var div = document.createElement('div');
-          div.style.width = '100px';
-          div.style.height = '100px';
-          div.style.border = '2px tomato solid';
-          div.textContent = `${size.in}`;
-          div.style.fontSize = 'x-large';
-          div.style.textAlign = 'right';
-          div.style.margin = '1.5ch';
-          div.style.display = 'flex';
-          div.style.flexWrap = 'wrap';
-          chart.append(div);
-        });
-        break;
-      } else if (customer === 'i') {
-        while (chart.firstChild) {
-          chart.removeChild(chart.firstChild);
-        }
-        infantSizes.forEach(size => {
-          var div = document.createElement('div');
-          div.style.width = '100px';
-          div.style.height = '100px';
-          div.style.border = '2px tomato solid';
-          div.textContent = `${size.in}`;
-          div.style.fontSize = 'x-large';
-          div.style.textAlign = 'right';
-          div.style.margin = '1.5ch';
-          div.style.display = 'flex';
-          div.style.flexWrap = 'wrap';
-          chart.append(div);
-        });
+    case 'l':
+      while (chart.firstChild) {
+        chart.removeChild(chart.firstChild);
       }
+      littleKidSizes.forEach(size => {
+        var div = document.createElement('div');
+        div.style.width = '100px';
+        div.style.height = '100px';
+        div.style.border = '2px tomato solid';
+        div.textContent = `${size.usCan}`;
+        div.style.fontSize = 'x-large';
+        div.style.textAlign = 'right';
+        div.style.margin = '1.5ch';
+        div.style.display = 'flex';
+        div.style.flexWrap = 'wrap';
+        chart.append(div);
+      });
       break;
-    case 'CM':
-      if (customer === 'w') {
-        while (chart.firstChild) {
-          chart.removeChild(chart.firstChild);
-        }
-        womenSizes.forEach(size => {
-          var div = document.createElement('div');
-          div.style.width = '100px';
-          div.style.height = '100px';
-          div.style.border = '2px tomato solid';
-          div.textContent = `${size.cm}`;
-          div.style.fontSize = 'x-large';
-          div.style.textAlign = 'right';
-          div.style.margin = '1.5ch';
-          div.style.display = 'flex';
-          div.style.flexWrap = 'wrap';
-          chart.append(div);
-        });
-        break;
-      } else if (customer === 'm') {
-        while (chart.firstChild) {
-          chart.removeChild(chart.firstChild);
-        }
-        menSizes.forEach(size => {
-          var div = document.createElement('div');
-          div.style.width = '100px';
-          div.style.height = '100px';
-          div.style.border = '2px tomato solid';
-          div.textContent = `${size.cm}`;
-          div.style.fontSize = 'x-large';
-          div.style.textAlign = 'right';
-          div.style.margin = '1.5ch';
-          div.style.display = 'flex';
-          div.style.flexWrap = 'wrap';
-          chart.append(div);
-        });
-        break;
-      } else if (customer === 'l') {
-        while (chart.firstChild) {
-          chart.removeChild(chart.firstChild);
-        }
-        littleKidSizes.forEach(size => {
-          var div = document.createElement('div');
-          div.style.width = '100px';
-          div.style.height = '100px';
-          div.style.border = '2px tomato solid';
-          div.textContent = `${size.cm}`;
-          div.style.fontSize = 'x-large';
-          div.style.textAlign = 'right';
-          div.style.margin = '1.5ch';
-          div.style.display = 'flex';
-          div.style.flexWrap = 'wrap';
-          chart.append(div);
-        });
-        break;
-      } else if (customer === 'b') {
-        while (chart.firstChild) {
-          chart.removeChild(chart.firstChild);
-        }
-        bigKidSizes.forEach(size => {
-          var div = document.createElement('div');
-          div.style.width = '100px';
-          div.style.height = '100px';
-          div.style.border = '2px tomato solid';
-          div.textContent = `${size.cm}`;
-          div.style.fontSize = 'x-large';
-          div.style.textAlign = 'right';
-          div.style.margin = '1.5ch';
-          div.style.display = 'flex';
-          div.style.flexWrap = 'wrap';
-          chart.append(div);
-        });
-        break;
-      } else if (customer === 't') {
-        while (chart.firstChild) {
-          chart.removeChild(chart.firstChild);
-        }
-        toddlerSizes.forEach(size => {
-          var div = document.createElement('div');
-          div.style.width = '100px';
-          div.style.height = '100px';
-          div.style.border = '2px tomato solid';
-          div.textContent = `${size.cm}`;
-          div.style.fontSize = 'x-large';
-          div.style.textAlign = 'right';
-          div.style.margin = '1.5ch';
-          div.style.display = 'flex';
-          div.style.flexWrap = 'wrap';
-          chart.append(div);
-        });
-        break;
-      } else if (customer === 'i') {
-        while (chart.firstChild) {
-          chart.removeChild(chart.firstChild);
-        }
-        infantSizes.forEach(size => {
-          var div = document.createElement('div');
-          div.style.width = '100px';
-          div.style.height = '100px';
-          div.style.border = '2px tomato solid';
-          div.textContent = `${size.cm}`;
-          div.style.fontSize = 'x-large';
-          div.style.textAlign = 'right';
-          div.style.margin = '1.5ch';
-          div.style.display = 'flex';
-          div.style.flexWrap = 'wrap';
-          chart.append(div);
-        });
+    case 'b':
+      while (chart.firstChild) {
+        chart.removeChild(chart.firstChild);
       }
+      bigKidSizes.forEach(size => {
+        var div = document.createElement('div');
+        div.style.width = '100px';
+        div.style.height = '100px';
+        div.style.border = '2px tomato solid';
+        div.textContent = `${size.usCan}`;
+        div.style.fontSize = 'x-large';
+        div.style.textAlign = 'right';
+        div.style.margin = '1.5ch';
+        div.style.display = 'flex';
+        div.style.flexWrap = 'wrap';
+        chart.append(div);
+      });
       break;
+    case 't':
+      while (chart.firstChild) {
+        chart.removeChild(chart.firstChild);
+      }
+      toddlerSizes.forEach(size => {
+        var div = document.createElement('div');
+        div.style.width = '100px';
+        div.style.height = '100px';
+        div.style.border = '2px tomato solid';
+        div.textContent = `${size.usCan}`;
+        div.style.fontSize = 'x-large';
+        div.style.textAlign = 'right';
+        div.style.margin = '1.5ch';
+        div.style.display = 'flex';
+        div.style.flexWrap = 'wrap';
+        chart.append(div);
+      });
+      break;
+    case 'i':
+      while (chart.firstChild) {
+        chart.removeChild(chart.firstChild);
+      }
+      infantSizes.forEach(size => {
+        var div = document.createElement('div');
+        div.style.width = '100px';
+        div.style.height = '100px';
+        div.style.border = '2px tomato solid';
+        div.textContent = `${size.usCan}`;
+        div.style.fontSize = 'x-large';
+        div.style.textAlign = 'right';
+        div.style.margin = '1.5ch';
+        div.style.display = 'flex';
+        div.style.flexWrap = 'wrap';
+        chart.append(div);
+      });
+      break;
+
+    default:
+      console.log('Error...');
+  }
+});
+unituk.addEventListener('click', e => {
+  console.log(customer);
+  let u = unituk.innerHTML;
+  console.log(u);
+  switch (customer) {
+    case 'w':
+      while (chart.firstChild) {
+        chart.removeChild(chart.firstChild);
+      }
+      womenSizes.forEach(size => {
+        var div = document.createElement('div');
+        div.style.width = '100px';
+        div.style.height = '100px';
+        div.style.border = '2px tomato solid';
+        div.textContent = `${size.uk}`;
+        div.style.fontSize = 'x-large';
+        div.style.textAlign = 'right';
+        div.style.margin = '1.5ch';
+        div.style.display = 'flex';
+        div.style.flexWrap = 'wrap';
+        chart.append(div);
+      });
+      break;
+    case 'm':
+      while (chart.firstChild) {
+        chart.removeChild(chart.firstChild);
+      }
+      menSizes.forEach(size => {
+        var div = document.createElement('div');
+        div.style.width = '100px';
+        div.style.height = '100px';
+        div.style.border = '2px tomato solid';
+        div.textContent = `${size.uk}`;
+        div.style.fontSize = 'x-large';
+        div.style.textAlign = 'right';
+        div.style.margin = '1.5ch';
+        div.style.display = 'flex';
+        div.style.flexWrap = 'wrap';
+        chart.append(div);
+      });
+      break;
+    case 'l':
+      while (chart.firstChild) {
+        chart.removeChild(chart.firstChild);
+      }
+      littleKidSizes.forEach(size => {
+        var div = document.createElement('div');
+        div.style.width = '100px';
+        div.style.height = '100px';
+        div.style.border = '2px tomato solid';
+        div.textContent = `${size.uk}`;
+        div.style.fontSize = 'x-large';
+        div.style.textAlign = 'right';
+        div.style.margin = '1.5ch';
+        div.style.display = 'flex';
+        div.style.flexWrap = 'wrap';
+        chart.append(div);
+      });
+      break;
+    case 'b':
+      while (chart.firstChild) {
+        chart.removeChild(chart.firstChild);
+      }
+      bigKidSizes.forEach(size => {
+        var div = document.createElement('div');
+        div.style.width = '100px';
+        div.style.height = '100px';
+        div.style.border = '2px tomato solid';
+        div.textContent = `${size.uk}`;
+        div.style.fontSize = 'x-large';
+        div.style.textAlign = 'right';
+        div.style.margin = '1.5ch';
+        div.style.display = 'flex';
+        div.style.flexWrap = 'wrap';
+        chart.append(div);
+      });
+      break;
+    case 't':
+      while (chart.firstChild) {
+        chart.removeChild(chart.firstChild);
+      }
+      toddlerSizes.forEach(size => {
+        var div = document.createElement('div');
+        div.style.width = '100px';
+        div.style.height = '100px';
+        div.style.border = '2px tomato solid';
+        div.textContent = `${size.uk}`;
+        div.style.fontSize = 'x-large';
+        div.style.textAlign = 'right';
+        div.style.margin = '1.5ch';
+        div.style.display = 'flex';
+        div.style.flexWrap = 'wrap';
+        chart.append(div);
+      });
+      break;
+    case 'i':
+      while (chart.firstChild) {
+        chart.removeChild(chart.firstChild);
+      }
+      infantSizes.forEach(size => {
+        var div = document.createElement('div');
+        div.style.width = '100px';
+        div.style.height = '100px';
+        div.style.border = '2px tomato solid';
+        div.textContent = `${size.uk}`;
+        div.style.fontSize = 'x-large';
+        div.style.textAlign = 'right';
+        div.style.margin = '1.5ch';
+        div.style.display = 'flex';
+        div.style.flexWrap = 'wrap';
+        chart.append(div);
+      });
+      break;
+
+    default:
+      console.log('Error...');
+  }
+});
+uniteu.addEventListener('click', e => {
+  console.log(customer);
+  let u = unitus.innerHTML;
+  console.log(u);
+  switch (customer) {
+    case 'w':
+      while (chart.firstChild) {
+        chart.removeChild(chart.firstChild);
+      }
+      womenSizes.forEach(size => {
+        var div = document.createElement('div');
+        div.style.width = '100px';
+        div.style.height = '100px';
+        div.style.border = '2px tomato solid';
+        div.textContent = `${size.eu}`;
+        div.style.fontSize = 'x-large';
+        div.style.textAlign = 'right';
+        div.style.margin = '1.5ch';
+        div.style.display = 'flex';
+        div.style.flexWrap = 'wrap';
+        chart.append(div);
+      });
+      break;
+    case 'm':
+      while (chart.firstChild) {
+        chart.removeChild(chart.firstChild);
+      }
+      menSizes.forEach(size => {
+        var div = document.createElement('div');
+        div.style.width = '100px';
+        div.style.height = '100px';
+        div.style.border = '2px tomato solid';
+        div.textContent = `${size.eu}`;
+        div.style.fontSize = 'x-large';
+        div.style.textAlign = 'right';
+        div.style.margin = '1.5ch';
+        div.style.display = 'flex';
+        div.style.flexWrap = 'wrap';
+        chart.append(div);
+      });
+      break;
+    case 'l':
+      while (chart.firstChild) {
+        chart.removeChild(chart.firstChild);
+      }
+      littleKidSizes.forEach(size => {
+        var div = document.createElement('div');
+        div.style.width = '100px';
+        div.style.height = '100px';
+        div.style.border = '2px tomato solid';
+        div.textContent = `${size.eu}`;
+        div.style.fontSize = 'x-large';
+        div.style.textAlign = 'right';
+        div.style.margin = '1.5ch';
+        div.style.display = 'flex';
+        div.style.flexWrap = 'wrap';
+        chart.append(div);
+      });
+      break;
+    case 'b':
+      while (chart.firstChild) {
+        chart.removeChild(chart.firstChild);
+      }
+      bigKidSizes.forEach(size => {
+        var div = document.createElement('div');
+        div.style.width = '100px';
+        div.style.height = '100px';
+        div.style.border = '2px tomato solid';
+        div.textContent = `${size.eu}`;
+        div.style.fontSize = 'x-large';
+        div.style.textAlign = 'right';
+        div.style.margin = '1.5ch';
+        div.style.display = 'flex';
+        div.style.flexWrap = 'wrap';
+        chart.append(div);
+      });
+      break;
+    case 't':
+      while (chart.firstChild) {
+        chart.removeChild(chart.firstChild);
+      }
+      toddlerSizes.forEach(size => {
+        var div = document.createElement('div');
+        div.style.width = '100px';
+        div.style.height = '100px';
+        div.style.border = '2px tomato solid';
+        div.textContent = `${size.eu}`;
+        div.style.fontSize = 'x-large';
+        div.style.textAlign = 'right';
+        div.style.margin = '1.5ch';
+        div.style.display = 'flex';
+        div.style.flexWrap = 'wrap';
+        chart.append(div);
+      });
+      break;
+    case 'i':
+      while (chart.firstChild) {
+        chart.removeChild(chart.firstChild);
+      }
+      infantSizes.forEach(size => {
+        var div = document.createElement('div');
+        div.style.width = '100px';
+        div.style.height = '100px';
+        div.style.border = '2px tomato solid';
+        div.textContent = `${size.eu}`;
+        div.style.fontSize = 'x-large';
+        div.style.textAlign = 'right';
+        div.style.margin = '1.5ch';
+        div.style.display = 'flex';
+        div.style.flexWrap = 'wrap';
+        chart.append(div);
+      });
+      break;
+
+    default:
+      console.log('Error...');
+  }
+});
+unitin.addEventListener('click', e => {
+  console.log(customer);
+  let u = unitus.innerHTML;
+  console.log(u);
+  switch (customer) {
+    case 'w':
+      while (chart.firstChild) {
+        chart.removeChild(chart.firstChild);
+      }
+      womenSizes.forEach(size => {
+        var div = document.createElement('div');
+        div.style.width = '100px';
+        div.style.height = '100px';
+        div.style.border = '2px tomato solid';
+        div.textContent = `${size.in}`;
+        div.style.fontSize = 'x-large';
+        div.style.textAlign = 'right';
+        div.style.margin = '1.5ch';
+        div.style.display = 'flex';
+        div.style.flexWrap = 'wrap';
+        chart.append(div);
+      });
+      break;
+    case 'm':
+      while (chart.firstChild) {
+        chart.removeChild(chart.firstChild);
+      }
+      menSizes.forEach(size => {
+        var div = document.createElement('div');
+        div.style.width = '100px';
+        div.style.height = '100px';
+        div.style.border = '2px tomato solid';
+        div.textContent = `${size.in}`;
+        div.style.fontSize = 'x-large';
+        div.style.textAlign = 'right';
+        div.style.margin = '1.5ch';
+        div.style.display = 'flex';
+        div.style.flexWrap = 'wrap';
+        chart.append(div);
+      });
+      break;
+    case 'l':
+      while (chart.firstChild) {
+        chart.removeChild(chart.firstChild);
+      }
+      littleKidSizes.forEach(size => {
+        var div = document.createElement('div');
+        div.style.width = '100px';
+        div.style.height = '100px';
+        div.style.border = '2px tomato solid';
+        div.textContent = `${size.in}`;
+        div.style.fontSize = 'x-large';
+        div.style.textAlign = 'right';
+        div.style.margin = '1.5ch';
+        div.style.display = 'flex';
+        div.style.flexWrap = 'wrap';
+        chart.append(div);
+      });
+      break;
+    case 'b':
+      while (chart.firstChild) {
+        chart.removeChild(chart.firstChild);
+      }
+      bigKidSizes.forEach(size => {
+        var div = document.createElement('div');
+        div.style.width = '100px';
+        div.style.height = '100px';
+        div.style.border = '2px tomato solid';
+        div.textContent = `${size.in}`;
+        div.style.fontSize = 'x-large';
+        div.style.textAlign = 'right';
+        div.style.margin = '1.5ch';
+        div.style.display = 'flex';
+        div.style.flexWrap = 'wrap';
+        chart.append(div);
+      });
+      break;
+    case 't':
+      while (chart.firstChild) {
+        chart.removeChild(chart.firstChild);
+      }
+      toddlerSizes.forEach(size => {
+        var div = document.createElement('div');
+        div.style.width = '100px';
+        div.style.height = '100px';
+        div.style.border = '2px tomato solid';
+        div.textContent = `${size.in}`;
+        div.style.fontSize = 'x-large';
+        div.style.textAlign = 'right';
+        div.style.margin = '1.5ch';
+        div.style.display = 'flex';
+        div.style.flexWrap = 'wrap';
+        chart.append(div);
+      });
+      break;
+    case 'i':
+      while (chart.firstChild) {
+        chart.removeChild(chart.firstChild);
+      }
+      infantSizes.forEach(size => {
+        var div = document.createElement('div');
+        div.style.width = '100px';
+        div.style.height = '100px';
+        div.style.border = '2px tomato solid';
+        div.textContent = `${size.in}`;
+        div.style.fontSize = 'x-large';
+        div.style.textAlign = 'right';
+        div.style.margin = '1.5ch';
+        div.style.display = 'flex';
+        div.style.flexWrap = 'wrap';
+        chart.append(div);
+      });
+      break;
+
+    default:
+      console.log('Error...');
+  }
+});
+unitcm.addEventListener('click', e => {
+  console.log(customer);
+  let u = unitus.innerHTML;
+  console.log(u);
+  switch (customer) {
+    case 'w':
+      while (chart.firstChild) {
+        chart.removeChild(chart.firstChild);
+      }
+      womenSizes.forEach(size => {
+        var div = document.createElement('div');
+        div.style.width = '100px';
+        div.style.height = '100px';
+        div.style.border = '2px tomato solid';
+        div.textContent = `${size.cm}`;
+        div.style.fontSize = 'x-large';
+        div.style.textAlign = 'right';
+        div.style.margin = '1.5ch';
+        div.style.display = 'flex';
+        div.style.flexWrap = 'wrap';
+        chart.append(div);
+      });
+      break;
+    case 'm':
+      while (chart.firstChild) {
+        chart.removeChild(chart.firstChild);
+      }
+      menSizes.forEach(size => {
+        var div = document.createElement('div');
+        div.style.width = '100px';
+        div.style.height = '100px';
+        div.style.border = '2px tomato solid';
+        div.textContent = `${size.cm}`;
+        div.style.fontSize = 'x-large';
+        div.style.textAlign = 'right';
+        div.style.margin = '1.5ch';
+        div.style.display = 'flex';
+        div.style.flexWrap = 'wrap';
+        chart.append(div);
+      });
+      break;
+    case 'l':
+      while (chart.firstChild) {
+        chart.removeChild(chart.firstChild);
+      }
+      littleKidSizes.forEach(size => {
+        var div = document.createElement('div');
+        div.style.width = '100px';
+        div.style.height = '100px';
+        div.style.border = '2px tomato solid';
+        div.textContent = `${size.cm}`;
+        div.style.fontSize = 'x-large';
+        div.style.textAlign = 'right';
+        div.style.margin = '1.5ch';
+        div.style.display = 'flex';
+        div.style.flexWrap = 'wrap';
+        chart.append(div);
+      });
+      break;
+    case 'b':
+      while (chart.firstChild) {
+        chart.removeChild(chart.firstChild);
+      }
+      bigKidSizes.forEach(size => {
+        var div = document.createElement('div');
+        div.style.width = '100px';
+        div.style.height = '100px';
+        div.style.border = '2px tomato solid';
+        div.textContent = `${size.cm}`;
+        div.style.fontSize = 'x-large';
+        div.style.textAlign = 'right';
+        div.style.margin = '1.5ch';
+        div.style.display = 'flex';
+        div.style.flexWrap = 'wrap';
+        chart.append(div);
+      });
+      break;
+    case 't':
+      while (chart.firstChild) {
+        chart.removeChild(chart.firstChild);
+      }
+      toddlerSizes.forEach(size => {
+        var div = document.createElement('div');
+        div.style.width = '100px';
+        div.style.height = '100px';
+        div.style.border = '2px tomato solid';
+        div.textContent = `${size.cm}`;
+        div.style.fontSize = 'x-large';
+        div.style.textAlign = 'right';
+        div.style.margin = '1.5ch';
+        div.style.display = 'flex';
+        div.style.flexWrap = 'wrap';
+        chart.append(div);
+      });
+      break;
+    case 'i':
+      while (chart.firstChild) {
+        chart.removeChild(chart.firstChild);
+      }
+      infantSizes.forEach(size => {
+        var div = document.createElement('div');
+        div.style.width = '100px';
+        div.style.height = '100px';
+        div.style.border = '2px tomato solid';
+        div.textContent = `${size.cm}`;
+        div.style.fontSize = 'x-large';
+        div.style.textAlign = 'right';
+        div.style.margin = '1.5ch';
+        div.style.display = 'flex';
+        div.style.flexWrap = 'wrap';
+        chart.append(div);
+      });
+      break;
+
     default:
       console.log('Error...');
   }
