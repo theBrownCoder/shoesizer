@@ -8,7 +8,9 @@ body {
 body {
     /* font-family: 'Oxanium', cursive; */
     font-family: 'Permanent Marker', cursive;
-    background-color: #fff;
+    background-image: url('/img/yeezy-background.png');
+    background-repeat: repeat;
+    background-blend-mode: soft-light;
 }
 
 h1 {
@@ -35,7 +37,6 @@ select {
     padding-left: 6ch;
     margin-left: 20%;
     margin-right: 20%;
-
 }
 
 #chart>div {
