@@ -615,7 +615,7 @@ uniteu.addEventListener('click', e => {
   unitcm.style.backgroundColor = color_unselected;
 
   console.log(customer);
-  let u = unitus.innerHTML;
+  let u = uniteu.innerHTML;
   console.log(u);
   switch (customer) {
     case 'w':
@@ -799,7 +799,7 @@ unitin.addEventListener('click', e => {
   unitcm.style.backgroundColor = color_unselected;
 
   console.log(customer);
-  let u = unitus.innerHTML;
+  let u = unitin.innerHTML;
   console.log(u);
   switch (customer) {
     case 'w':
@@ -983,7 +983,7 @@ unitcm.addEventListener('click', e => {
   unitcm.style.backgroundColor = color_selected;
 
   console.log(customer);
-  let u = unitus.innerHTML;
+  let u = unitcm.innerHTML;
   console.log(u);
   switch (customer) {
     case 'w':
@@ -995,7 +995,7 @@ unitcm.addEventListener('click', e => {
         let reference;
         var div = document.createElement('div');
         div.style.width = '200px';
-        div.style.height = '100px';
+        div.style.height = '50px';
         div.style.border = '2px tomato solid';
         div.textContent = `${size.cm}`;
         div.style.fontSize = 'x-large';
