@@ -31,6 +31,13 @@ select {
     margin-bottom: 2%;
 }
 
+#chart-container {
+    height: 500px;
+    display: flex;
+    overflow: scroll;
+    scrollbar-darkshadow-color: #2ba84a;
+}
+
 #chart {
     display: flex;
     flex-wrap: wrap;
