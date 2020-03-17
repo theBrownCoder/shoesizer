@@ -112,8 +112,9 @@ womens.addEventListener('click', e => {
   }
   customer = 'w';
   womenSizes.forEach(size => {
+    let reference;
     var div = document.createElement('div');
-    div.style.width = '100px';
+    div.style.width = '200px';
     div.style.height = '100px';
     div.style.border = '2px tomato solid';
     div.textContent = `${size.usCan}`;
@@ -122,6 +123,23 @@ womens.addEventListener('click', e => {
     div.style.margin = '1.5ch';
     div.style.display = 'flex';
     div.style.flexWrap = 'wrap';
+    div.addEventListener('mouseover', e => {
+      reference = `${': ' + '(us -' + size.usCan + ')'}`;
+      div.textContent += reference;
+    });
+    div.addEventListener('mouseout', e => {
+      reference = `${size.usCan}`;
+      div.textContent = reference;
+    });
+
+    div.addEventListener('mouseover', e => {
+      reference = `${': ' + '(us -' + size.usCan + ')'}`;
+      div.textContent += reference;
+    });
+    div.addEventListener('mouseout', e => {
+      reference = `${size.usCan}`;
+      div.textContent = reference;
+    });
     chart.append(div);
   });
 });
@@ -131,8 +149,9 @@ mens.addEventListener('click', e => {
   }
   customer = 'm';
   menSizes.forEach(size => {
+    let reference;
     var div = document.createElement('div');
-    div.style.width = '100px';
+    div.style.width = '200px';
     div.style.height = '100px';
     div.style.border = '2px tomato solid';
     div.textContent = `${size.usCan}`;
@@ -141,6 +160,14 @@ mens.addEventListener('click', e => {
     div.style.margin = '1.5ch';
     div.style.display = 'flex';
     div.style.flexWrap = 'wrap';
+    div.addEventListener('mouseover', e => {
+      reference = `${': ' + '(us -' + size.usCan + ')'}`;
+      div.textContent += reference;
+    });
+    div.addEventListener('mouseout', e => {
+      reference = `${size.usCan}`;
+      div.textContent = reference;
+    });
     chart.append(div);
   });
 });
@@ -150,8 +177,9 @@ littlekids.addEventListener('click', e => {
   }
   customer = 'l';
   littleKidSizes.forEach(size => {
+    let reference;
     var div = document.createElement('div');
-    div.style.width = '100px';
+    div.style.width = '200px';
     div.style.height = '100px';
     div.style.border = '2px tomato solid';
     div.textContent = `${size.usCan}`;
@@ -160,6 +188,14 @@ littlekids.addEventListener('click', e => {
     div.style.margin = '1.5ch';
     div.style.display = 'flex';
     div.style.flexWrap = 'wrap';
+    div.addEventListener('mouseover', e => {
+      reference = `${': ' + '(us -' + size.usCan + ')'}`;
+      div.textContent += reference;
+    });
+    div.addEventListener('mouseout', e => {
+      reference = `${size.usCan}`;
+      div.textContent = reference;
+    });
     chart.append(div);
   });
 });
@@ -169,8 +205,9 @@ bigkids.addEventListener('click', e => {
   }
   customer = 'b';
   bigKidSizes.forEach(size => {
+    let reference;
     var div = document.createElement('div');
-    div.style.width = '100px';
+    div.style.width = '200px';
     div.style.height = '100px';
     div.style.border = '2px tomato solid';
     div.textContent = `${size.usCan}`;
@@ -179,6 +216,14 @@ bigkids.addEventListener('click', e => {
     div.style.margin = '1.5ch';
     div.style.display = 'flex';
     div.style.flexWrap = 'wrap';
+    div.addEventListener('mouseover', e => {
+      reference = `${': ' + '(us -' + size.usCan + ')'}`;
+      div.textContent += reference;
+    });
+    div.addEventListener('mouseout', e => {
+      reference = `${size.usCan}`;
+      div.textContent = reference;
+    });
     chart.append(div);
   });
 });
@@ -188,8 +233,9 @@ toddlers.addEventListener('click', e => {
   }
   customer = 't';
   toddlerSizes.forEach(size => {
+    let reference;
     var div = document.createElement('div');
-    div.style.width = '100px';
+    div.style.width = '200px';
     div.style.height = '100px';
     div.style.border = '2px tomato solid';
     div.textContent = `${size.usCan}`;
@@ -198,6 +244,14 @@ toddlers.addEventListener('click', e => {
     div.style.margin = '1.5ch';
     div.style.display = 'flex';
     div.style.flexWrap = 'wrap';
+    div.addEventListener('mouseover', e => {
+      reference = `${': ' + '(us -' + size.usCan + ')'}`;
+      div.textContent += reference;
+    });
+    div.addEventListener('mouseout', e => {
+      reference = `${size.usCan}`;
+      div.textContent = reference;
+    });
     chart.append(div);
   });
 });
@@ -207,8 +261,9 @@ infants.addEventListener('click', e => {
   }
   customer = 'i';
   infantSizes.forEach(size => {
+    let reference;
     var div = document.createElement('div');
-    div.style.width = '100px';
+    div.style.width = '200px';
     div.style.height = '100px';
     div.style.border = '2px tomato solid';
     div.textContent = `${size.usCan}`;
@@ -217,6 +272,14 @@ infants.addEventListener('click', e => {
     div.style.margin = '1.5ch';
     div.style.display = 'flex';
     div.style.flexWrap = 'wrap';
+    div.addEventListener('mouseover', e => {
+      reference = `${': ' + '(us -' + size.usCan + ')'}`;
+      div.textContent += reference;
+    });
+    div.addEventListener('mouseout', e => {
+      reference = `${size.usCan}`;
+      div.textContent = reference;
+    });
     chart.append(div);
   });
 });
@@ -239,7 +302,7 @@ unitus.addEventListener('click', e => {
       }
       womenSizes.forEach(size => {
         var div = document.createElement('div');
-        div.style.width = '100px';
+        div.style.width = '200px';
         div.style.height = '100px';
         div.style.border = '2px tomato solid';
         div.textContent = `${size.usCan}`;
@@ -257,7 +320,7 @@ unitus.addEventListener('click', e => {
       }
       menSizes.forEach(size => {
         var div = document.createElement('div');
-        div.style.width = '100px';
+        div.style.width = '200px';
         div.style.height = '100px';
         div.style.border = '2px tomato solid';
         div.textContent = `${size.usCan}`;
@@ -275,7 +338,7 @@ unitus.addEventListener('click', e => {
       }
       littleKidSizes.forEach(size => {
         var div = document.createElement('div');
-        div.style.width = '100px';
+        div.style.width = '200px';
         div.style.height = '100px';
         div.style.border = '2px tomato solid';
         div.textContent = `${size.usCan}`;
@@ -293,7 +356,7 @@ unitus.addEventListener('click', e => {
       }
       bigKidSizes.forEach(size => {
         var div = document.createElement('div');
-        div.style.width = '100px';
+        div.style.width = '200px';
         div.style.height = '100px';
         div.style.border = '2px tomato solid';
         div.textContent = `${size.usCan}`;
@@ -311,7 +374,7 @@ unitus.addEventListener('click', e => {
       }
       toddlerSizes.forEach(size => {
         var div = document.createElement('div');
-        div.style.width = '100px';
+        div.style.width = '200px';
         div.style.height = '100px';
         div.style.border = '2px tomato solid';
         div.textContent = `${size.usCan}`;
@@ -329,7 +392,7 @@ unitus.addEventListener('click', e => {
       }
       infantSizes.forEach(size => {
         var div = document.createElement('div');
-        div.style.width = '100px';
+        div.style.width = '200px';
         div.style.height = '100px';
         div.style.border = '2px tomato solid';
         div.textContent = `${size.usCan}`;
@@ -362,8 +425,9 @@ unituk.addEventListener('click', e => {
         chart.removeChild(chart.firstChild);
       }
       womenSizes.forEach(size => {
+        let reference;
         var div = document.createElement('div');
-        div.style.width = '100px';
+        div.style.width = '200px';
         div.style.height = '100px';
         div.style.border = '2px tomato solid';
         div.textContent = `${size.uk}`;
@@ -372,6 +436,14 @@ unituk.addEventListener('click', e => {
         div.style.margin = '1.5ch';
         div.style.display = 'flex';
         div.style.flexWrap = 'wrap';
+        div.addEventListener('mouseover', e => {
+          reference = `${': ' + '(us -' + size.usCan + ')'}`;
+          div.textContent += reference;
+        });
+        div.addEventListener('mouseout', e => {
+          reference = `${size.uk}`;
+          div.textContent = reference;
+        });
         chart.append(div);
       });
       break;
@@ -380,8 +452,9 @@ unituk.addEventListener('click', e => {
         chart.removeChild(chart.firstChild);
       }
       menSizes.forEach(size => {
+        let reference;
         var div = document.createElement('div');
-        div.style.width = '100px';
+        div.style.width = '200px';
         div.style.height = '100px';
         div.style.border = '2px tomato solid';
         div.textContent = `${size.uk}`;
@@ -390,6 +463,14 @@ unituk.addEventListener('click', e => {
         div.style.margin = '1.5ch';
         div.style.display = 'flex';
         div.style.flexWrap = 'wrap';
+        div.addEventListener('mouseover', e => {
+          reference = `${': ' + '(us -' + size.usCan + ')'}`;
+          div.textContent += reference;
+        });
+        div.addEventListener('mouseout', e => {
+          reference = `${size.uk}`;
+          div.textContent = reference;
+        });
         chart.append(div);
       });
       break;
@@ -398,8 +479,9 @@ unituk.addEventListener('click', e => {
         chart.removeChild(chart.firstChild);
       }
       littleKidSizes.forEach(size => {
+        let reference;
         var div = document.createElement('div');
-        div.style.width = '100px';
+        div.style.width = '200px';
         div.style.height = '100px';
         div.style.border = '2px tomato solid';
         div.textContent = `${size.uk}`;
@@ -408,6 +490,14 @@ unituk.addEventListener('click', e => {
         div.style.margin = '1.5ch';
         div.style.display = 'flex';
         div.style.flexWrap = 'wrap';
+        div.addEventListener('mouseover', e => {
+          reference = `${': ' + '(us -' + size.usCan + ')'}`;
+          div.textContent += reference;
+        });
+        div.addEventListener('mouseout', e => {
+          reference = `${size.uk}`;
+          div.textContent = reference;
+        });
         chart.append(div);
       });
       break;
@@ -416,8 +506,9 @@ unituk.addEventListener('click', e => {
         chart.removeChild(chart.firstChild);
       }
       bigKidSizes.forEach(size => {
+        let reference;
         var div = document.createElement('div');
-        div.style.width = '100px';
+        div.style.width = '200px';
         div.style.height = '100px';
         div.style.border = '2px tomato solid';
         div.textContent = `${size.uk}`;
@@ -426,6 +517,14 @@ unituk.addEventListener('click', e => {
         div.style.margin = '1.5ch';
         div.style.display = 'flex';
         div.style.flexWrap = 'wrap';
+        div.addEventListener('mouseover', e => {
+          reference = `${': ' + '(us -' + size.usCan + ')'}`;
+          div.textContent += reference;
+        });
+        div.addEventListener('mouseout', e => {
+          reference = `${size.uk}`;
+          div.textContent = reference;
+        });
         chart.append(div);
       });
       break;
@@ -434,8 +533,9 @@ unituk.addEventListener('click', e => {
         chart.removeChild(chart.firstChild);
       }
       toddlerSizes.forEach(size => {
+        let reference;
         var div = document.createElement('div');
-        div.style.width = '100px';
+        div.style.width = '200px';
         div.style.height = '100px';
         div.style.border = '2px tomato solid';
         div.textContent = `${size.uk}`;
@@ -444,6 +544,14 @@ unituk.addEventListener('click', e => {
         div.style.margin = '1.5ch';
         div.style.display = 'flex';
         div.style.flexWrap = 'wrap';
+        div.addEventListener('mouseover', e => {
+          reference = `${': ' + '(us -' + size.usCan + ')'}`;
+          div.textContent += reference;
+        });
+        div.addEventListener('mouseout', e => {
+          reference = `${size.uk}`;
+          div.textContent = reference;
+        });
         chart.append(div);
       });
       break;
@@ -452,8 +560,9 @@ unituk.addEventListener('click', e => {
         chart.removeChild(chart.firstChild);
       }
       infantSizes.forEach(size => {
+        let reference;
         var div = document.createElement('div');
-        div.style.width = '100px';
+        div.style.width = '200px';
         div.style.height = '100px';
         div.style.border = '2px tomato solid';
         div.textContent = `${size.uk}`;
@@ -462,6 +571,14 @@ unituk.addEventListener('click', e => {
         div.style.margin = '1.5ch';
         div.style.display = 'flex';
         div.style.flexWrap = 'wrap';
+        div.addEventListener('mouseover', e => {
+          reference = `${': ' + '(us -' + size.usCan + ')'}`;
+          div.textContent += reference;
+        });
+        div.addEventListener('mouseout', e => {
+          reference = `${size.uk}`;
+          div.textContent = reference;
+        });
         chart.append(div);
       });
       break;
@@ -486,8 +603,9 @@ uniteu.addEventListener('click', e => {
         chart.removeChild(chart.firstChild);
       }
       womenSizes.forEach(size => {
+        let reference;
         var div = document.createElement('div');
-        div.style.width = '100px';
+        div.style.width = '200px';
         div.style.height = '100px';
         div.style.border = '2px tomato solid';
         div.textContent = `${size.eu}`;
@@ -496,6 +614,14 @@ uniteu.addEventListener('click', e => {
         div.style.margin = '1.5ch';
         div.style.display = 'flex';
         div.style.flexWrap = 'wrap';
+        div.addEventListener('mouseover', e => {
+          reference = `${': ' + '(us -' + size.usCan + ')'}`;
+          div.textContent += reference;
+        });
+        div.addEventListener('mouseout', e => {
+          reference = `${size.eu}`;
+          div.textContent = reference;
+        });
         chart.append(div);
       });
       break;
@@ -504,8 +630,9 @@ uniteu.addEventListener('click', e => {
         chart.removeChild(chart.firstChild);
       }
       menSizes.forEach(size => {
+        let reference;
         var div = document.createElement('div');
-        div.style.width = '100px';
+        div.style.width = '200px';
         div.style.height = '100px';
         div.style.border = '2px tomato solid';
         div.textContent = `${size.eu}`;
@@ -514,6 +641,14 @@ uniteu.addEventListener('click', e => {
         div.style.margin = '1.5ch';
         div.style.display = 'flex';
         div.style.flexWrap = 'wrap';
+        div.addEventListener('mouseover', e => {
+          reference = `${': ' + '(us -' + size.usCan + ')'}`;
+          div.textContent += reference;
+        });
+        div.addEventListener('mouseout', e => {
+          reference = `${size.eu}`;
+          div.textContent = reference;
+        });
         chart.append(div);
       });
       break;
@@ -522,8 +657,9 @@ uniteu.addEventListener('click', e => {
         chart.removeChild(chart.firstChild);
       }
       littleKidSizes.forEach(size => {
+        let reference;
         var div = document.createElement('div');
-        div.style.width = '100px';
+        div.style.width = '200px';
         div.style.height = '100px';
         div.style.border = '2px tomato solid';
         div.textContent = `${size.eu}`;
@@ -532,6 +668,14 @@ uniteu.addEventListener('click', e => {
         div.style.margin = '1.5ch';
         div.style.display = 'flex';
         div.style.flexWrap = 'wrap';
+        div.addEventListener('mouseover', e => {
+          reference = `${': ' + '(us -' + size.usCan + ')'}`;
+          div.textContent += reference;
+        });
+        div.addEventListener('mouseout', e => {
+          reference = `${size.eu}`;
+          div.textContent = reference;
+        });
         chart.append(div);
       });
       break;
@@ -540,8 +684,9 @@ uniteu.addEventListener('click', e => {
         chart.removeChild(chart.firstChild);
       }
       bigKidSizes.forEach(size => {
+        let reference;
         var div = document.createElement('div');
-        div.style.width = '100px';
+        div.style.width = '200px';
         div.style.height = '100px';
         div.style.border = '2px tomato solid';
         div.textContent = `${size.eu}`;
@@ -550,6 +695,14 @@ uniteu.addEventListener('click', e => {
         div.style.margin = '1.5ch';
         div.style.display = 'flex';
         div.style.flexWrap = 'wrap';
+        div.addEventListener('mouseover', e => {
+          reference = `${': ' + '(us -' + size.usCan + ')'}`;
+          div.textContent += reference;
+        });
+        div.addEventListener('mouseout', e => {
+          reference = `${size.eu}`;
+          div.textContent = reference;
+        });
         chart.append(div);
       });
       break;
@@ -558,8 +711,9 @@ uniteu.addEventListener('click', e => {
         chart.removeChild(chart.firstChild);
       }
       toddlerSizes.forEach(size => {
+        let reference;
         var div = document.createElement('div');
-        div.style.width = '100px';
+        div.style.width = '200px';
         div.style.height = '100px';
         div.style.border = '2px tomato solid';
         div.textContent = `${size.eu}`;
@@ -568,6 +722,14 @@ uniteu.addEventListener('click', e => {
         div.style.margin = '1.5ch';
         div.style.display = 'flex';
         div.style.flexWrap = 'wrap';
+        div.addEventListener('mouseover', e => {
+          reference = `${': ' + '(us -' + size.usCan + ')'}`;
+          div.textContent += reference;
+        });
+        div.addEventListener('mouseout', e => {
+          reference = `${size.eu}`;
+          div.textContent = reference;
+        });
         chart.append(div);
       });
       break;
@@ -576,8 +738,9 @@ uniteu.addEventListener('click', e => {
         chart.removeChild(chart.firstChild);
       }
       infantSizes.forEach(size => {
+        let reference;
         var div = document.createElement('div');
-        div.style.width = '100px';
+        div.style.width = '200px';
         div.style.height = '100px';
         div.style.border = '2px tomato solid';
         div.textContent = `${size.eu}`;
@@ -586,6 +749,14 @@ uniteu.addEventListener('click', e => {
         div.style.margin = '1.5ch';
         div.style.display = 'flex';
         div.style.flexWrap = 'wrap';
+        div.addEventListener('mouseover', e => {
+          reference = `${': ' + '(us -' + size.usCan + ')'}`;
+          div.textContent += reference;
+        });
+        div.addEventListener('mouseout', e => {
+          reference = `${size.eu}`;
+          div.textContent = reference;
+        });
         chart.append(div);
       });
       break;
@@ -610,8 +781,9 @@ unitin.addEventListener('click', e => {
         chart.removeChild(chart.firstChild);
       }
       womenSizes.forEach(size => {
+        let reference;
         var div = document.createElement('div');
-        div.style.width = '100px';
+        div.style.width = '200px';
         div.style.height = '100px';
         div.style.border = '2px tomato solid';
         div.textContent = `${size.in}`;
@@ -620,6 +792,14 @@ unitin.addEventListener('click', e => {
         div.style.margin = '1.5ch';
         div.style.display = 'flex';
         div.style.flexWrap = 'wrap';
+        div.addEventListener('mouseover', e => {
+          reference = `${': ' + '(us -' + size.usCan + ')'}`;
+          div.textContent += reference;
+        });
+        div.addEventListener('mouseout', e => {
+          reference = `${size.in}`;
+          div.textContent = reference;
+        });
         chart.append(div);
       });
       break;
@@ -628,8 +808,9 @@ unitin.addEventListener('click', e => {
         chart.removeChild(chart.firstChild);
       }
       menSizes.forEach(size => {
+        let reference;
         var div = document.createElement('div');
-        div.style.width = '100px';
+        div.style.width = '200px';
         div.style.height = '100px';
         div.style.border = '2px tomato solid';
         div.textContent = `${size.in}`;
@@ -638,6 +819,14 @@ unitin.addEventListener('click', e => {
         div.style.margin = '1.5ch';
         div.style.display = 'flex';
         div.style.flexWrap = 'wrap';
+        div.addEventListener('mouseover', e => {
+          reference = `${': ' + '(us -' + size.usCan + ')'}`;
+          div.textContent += reference;
+        });
+        div.addEventListener('mouseout', e => {
+          reference = `${size.in}`;
+          div.textContent = reference;
+        });
         chart.append(div);
       });
       break;
@@ -646,8 +835,9 @@ unitin.addEventListener('click', e => {
         chart.removeChild(chart.firstChild);
       }
       littleKidSizes.forEach(size => {
+        let reference;
         var div = document.createElement('div');
-        div.style.width = '100px';
+        div.style.width = '200px';
         div.style.height = '100px';
         div.style.border = '2px tomato solid';
         div.textContent = `${size.in}`;
@@ -656,6 +846,14 @@ unitin.addEventListener('click', e => {
         div.style.margin = '1.5ch';
         div.style.display = 'flex';
         div.style.flexWrap = 'wrap';
+        div.addEventListener('mouseover', e => {
+          reference = `${': ' + '(us -' + size.usCan + ')'}`;
+          div.textContent += reference;
+        });
+        div.addEventListener('mouseout', e => {
+          reference = `${size.in}`;
+          div.textContent = reference;
+        });
         chart.append(div);
       });
       break;
@@ -664,8 +862,9 @@ unitin.addEventListener('click', e => {
         chart.removeChild(chart.firstChild);
       }
       bigKidSizes.forEach(size => {
+        let reference;
         var div = document.createElement('div');
-        div.style.width = '100px';
+        div.style.width = '200px';
         div.style.height = '100px';
         div.style.border = '2px tomato solid';
         div.textContent = `${size.in}`;
@@ -674,6 +873,14 @@ unitin.addEventListener('click', e => {
         div.style.margin = '1.5ch';
         div.style.display = 'flex';
         div.style.flexWrap = 'wrap';
+        div.addEventListener('mouseover', e => {
+          reference = `${': ' + '(us -' + size.usCan + ')'}`;
+          div.textContent += reference;
+        });
+        div.addEventListener('mouseout', e => {
+          reference = `${size.in}`;
+          div.textContent = reference;
+        });
         chart.append(div);
       });
       break;
@@ -682,8 +889,9 @@ unitin.addEventListener('click', e => {
         chart.removeChild(chart.firstChild);
       }
       toddlerSizes.forEach(size => {
+        let reference;
         var div = document.createElement('div');
-        div.style.width = '100px';
+        div.style.width = '200px';
         div.style.height = '100px';
         div.style.border = '2px tomato solid';
         div.textContent = `${size.in}`;
@@ -692,6 +900,14 @@ unitin.addEventListener('click', e => {
         div.style.margin = '1.5ch';
         div.style.display = 'flex';
         div.style.flexWrap = 'wrap';
+        div.addEventListener('mouseover', e => {
+          reference = `${': ' + '(us -' + size.usCan + ')'}`;
+          div.textContent += reference;
+        });
+        div.addEventListener('mouseout', e => {
+          reference = `${size.in}`;
+          div.textContent = reference;
+        });
         chart.append(div);
       });
       break;
@@ -700,8 +916,9 @@ unitin.addEventListener('click', e => {
         chart.removeChild(chart.firstChild);
       }
       infantSizes.forEach(size => {
+        let reference;
         var div = document.createElement('div');
-        div.style.width = '100px';
+        div.style.width = '200px';
         div.style.height = '100px';
         div.style.border = '2px tomato solid';
         div.textContent = `${size.in}`;
@@ -710,6 +927,14 @@ unitin.addEventListener('click', e => {
         div.style.margin = '1.5ch';
         div.style.display = 'flex';
         div.style.flexWrap = 'wrap';
+        div.addEventListener('mouseover', e => {
+          reference = `${': ' + '(us -' + size.usCan + ')'}`;
+          div.textContent += reference;
+        });
+        div.addEventListener('mouseout', e => {
+          reference = `${size.in}`;
+          div.textContent = reference;
+        });
         chart.append(div);
       });
       break;
@@ -734,8 +959,9 @@ unitcm.addEventListener('click', e => {
         chart.removeChild(chart.firstChild);
       }
       womenSizes.forEach(size => {
+        let reference;
         var div = document.createElement('div');
-        div.style.width = '100px';
+        div.style.width = '200px';
         div.style.height = '100px';
         div.style.border = '2px tomato solid';
         div.textContent = `${size.cm}`;
@@ -744,6 +970,14 @@ unitcm.addEventListener('click', e => {
         div.style.margin = '1.5ch';
         div.style.display = 'flex';
         div.style.flexWrap = 'wrap';
+        div.addEventListener('mouseover', e => {
+          reference = `${': ' + '(us -' + size.usCan + ')'}`;
+          div.textContent += reference;
+        });
+        div.addEventListener('mouseout', e => {
+          reference = `${size.cm}`;
+          div.textContent = reference;
+        });
         chart.append(div);
       });
       break;
@@ -752,8 +986,9 @@ unitcm.addEventListener('click', e => {
         chart.removeChild(chart.firstChild);
       }
       menSizes.forEach(size => {
+        let reference;
         var div = document.createElement('div');
-        div.style.width = '100px';
+        div.style.width = '200px';
         div.style.height = '100px';
         div.style.border = '2px tomato solid';
         div.textContent = `${size.cm}`;
@@ -762,6 +997,14 @@ unitcm.addEventListener('click', e => {
         div.style.margin = '1.5ch';
         div.style.display = 'flex';
         div.style.flexWrap = 'wrap';
+        div.addEventListener('mouseover', e => {
+          reference = `${': ' + '(us -' + size.usCan + ')'}`;
+          div.textContent += reference;
+        });
+        div.addEventListener('mouseout', e => {
+          reference = `${size.cm}`;
+          div.textContent = reference;
+        });
         chart.append(div);
       });
       break;
@@ -770,8 +1013,9 @@ unitcm.addEventListener('click', e => {
         chart.removeChild(chart.firstChild);
       }
       littleKidSizes.forEach(size => {
+        let reference;
         var div = document.createElement('div');
-        div.style.width = '100px';
+        div.style.width = '200px';
         div.style.height = '100px';
         div.style.border = '2px tomato solid';
         div.textContent = `${size.cm}`;
@@ -780,6 +1024,14 @@ unitcm.addEventListener('click', e => {
         div.style.margin = '1.5ch';
         div.style.display = 'flex';
         div.style.flexWrap = 'wrap';
+        div.addEventListener('mouseover', e => {
+          reference = `${': ' + '(us -' + size.usCan + ')'}`;
+          div.textContent += reference;
+        });
+        div.addEventListener('mouseout', e => {
+          reference = `${size.cm}`;
+          div.textContent = reference;
+        });
         chart.append(div);
       });
       break;
@@ -788,8 +1040,9 @@ unitcm.addEventListener('click', e => {
         chart.removeChild(chart.firstChild);
       }
       bigKidSizes.forEach(size => {
+        let reference;
         var div = document.createElement('div');
-        div.style.width = '100px';
+        div.style.width = '200px';
         div.style.height = '100px';
         div.style.border = '2px tomato solid';
         div.textContent = `${size.cm}`;
@@ -798,6 +1051,14 @@ unitcm.addEventListener('click', e => {
         div.style.margin = '1.5ch';
         div.style.display = 'flex';
         div.style.flexWrap = 'wrap';
+        div.addEventListener('mouseover', e => {
+          reference = `${': ' + '(us -' + size.usCan + ')'}`;
+          div.textContent += reference;
+        });
+        div.addEventListener('mouseout', e => {
+          reference = `${size.cm}`;
+          div.textContent = reference;
+        });
         chart.append(div);
       });
       break;
@@ -806,8 +1067,9 @@ unitcm.addEventListener('click', e => {
         chart.removeChild(chart.firstChild);
       }
       toddlerSizes.forEach(size => {
+        let reference;
         var div = document.createElement('div');
-        div.style.width = '100px';
+        div.style.width = '200px';
         div.style.height = '100px';
         div.style.border = '2px tomato solid';
         div.textContent = `${size.cm}`;
@@ -816,6 +1078,14 @@ unitcm.addEventListener('click', e => {
         div.style.margin = '1.5ch';
         div.style.display = 'flex';
         div.style.flexWrap = 'wrap';
+        div.addEventListener('mouseover', e => {
+          reference = `${': ' + '(us -' + size.usCan + ')'}`;
+          div.textContent += reference;
+        });
+        div.addEventListener('mouseout', e => {
+          reference = `${size.cm}`;
+          div.textContent = reference;
+        });
         chart.append(div);
       });
       break;
@@ -824,8 +1094,9 @@ unitcm.addEventListener('click', e => {
         chart.removeChild(chart.firstChild);
       }
       infantSizes.forEach(size => {
+        let reference;
         var div = document.createElement('div');
-        div.style.width = '100px';
+        div.style.width = '200px';
         div.style.height = '100px';
         div.style.border = '2px tomato solid';
         div.textContent = `${size.cm}`;
@@ -834,6 +1105,14 @@ unitcm.addEventListener('click', e => {
         div.style.margin = '1.5ch';
         div.style.display = 'flex';
         div.style.flexWrap = 'wrap';
+        div.addEventListener('mouseover', e => {
+          reference = `${': ' + '(us -' + size.usCan + ')'}`;
+          div.textContent += reference;
+        });
+        div.addEventListener('mouseout', e => {
+          reference = `${size.cm}`;
+          div.textContent = reference;
+        });
         chart.append(div);
       });
       break;
