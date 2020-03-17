@@ -11,6 +11,7 @@ const unituk = document.getElementById('unituk');
 const uniteu = document.getElementById('uniteu');
 const unitin = document.getElementById('unitin');
 const unitcm = document.getElementById('unitcm');
+const chartBox = document.getElementById('chart-container');
 const color_selected = '#2ba84a';
 const color_unselected = 'transparent';
 
@@ -107,9 +108,15 @@ const infantSizes = [
 
 // Size Group Click Listeners
 womens.addEventListener('click', e => {
+  unitus.style.backgroundColor = color_selected;
+  unituk.style.backgroundColor = color_unselected;
+  uniteu.style.backgroundColor = color_unselected;
+  unitin.style.backgroundColor = color_unselected;
+  unitcm.style.backgroundColor = color_unselected;
   while (chart.firstChild) {
     chart.removeChild(chart.firstChild);
   }
+  chartBox.scrollTo(0, 0);
   customer = 'w';
   womenSizes.forEach(size => {
     let reference;
@@ -123,19 +130,6 @@ womens.addEventListener('click', e => {
     div.style.margin = '1.5ch';
     div.style.display = 'flex';
     div.style.flexWrap = 'wrap';
-    div.addEventListener('mouseover', e => {
-      reference = `${': ' + '(us -' + size.usCan + ')'}`;
-      div.textContent += reference;
-    });
-    div.addEventListener('mouseout', e => {
-      reference = `${size.usCan}`;
-      div.textContent = reference;
-    });
-
-    div.addEventListener('mouseover', e => {
-      reference = `${': ' + '(us -' + size.usCan + ')'}`;
-      div.textContent += reference;
-    });
     div.addEventListener('mouseout', e => {
       reference = `${size.usCan}`;
       div.textContent = reference;
@@ -144,9 +138,15 @@ womens.addEventListener('click', e => {
   });
 });
 mens.addEventListener('click', e => {
+  unitus.style.backgroundColor = color_selected;
+  unituk.style.backgroundColor = color_unselected;
+  uniteu.style.backgroundColor = color_unselected;
+  unitin.style.backgroundColor = color_unselected;
+  unitcm.style.backgroundColor = color_unselected;
   while (chart.firstChild) {
     chart.removeChild(chart.firstChild);
   }
+  chartBox.scrollTo(0, 0);
   customer = 'm';
   menSizes.forEach(size => {
     let reference;
@@ -160,10 +160,10 @@ mens.addEventListener('click', e => {
     div.style.margin = '1.5ch';
     div.style.display = 'flex';
     div.style.flexWrap = 'wrap';
-    div.addEventListener('mouseover', e => {
-      reference = `${': ' + '(us -' + size.usCan + ')'}`;
-      div.textContent += reference;
-    });
+    // div.addEventListener('mouseover', e => {
+    //   reference = `${': ' + '(us -' + size.usCan + ')'}`;
+    //   div.textContent += reference;
+    // });
     div.addEventListener('mouseout', e => {
       reference = `${size.usCan}`;
       div.textContent = reference;
@@ -172,9 +172,15 @@ mens.addEventListener('click', e => {
   });
 });
 littlekids.addEventListener('click', e => {
+  unitus.style.backgroundColor = color_selected;
+  unituk.style.backgroundColor = color_unselected;
+  uniteu.style.backgroundColor = color_unselected;
+  unitin.style.backgroundColor = color_unselected;
+  unitcm.style.backgroundColor = color_unselected;
   while (chart.firstChild) {
     chart.removeChild(chart.firstChild);
   }
+  chartBox.scrollTo(0, 0);
   customer = 'l';
   littleKidSizes.forEach(size => {
     let reference;
@@ -188,10 +194,6 @@ littlekids.addEventListener('click', e => {
     div.style.margin = '1.5ch';
     div.style.display = 'flex';
     div.style.flexWrap = 'wrap';
-    div.addEventListener('mouseover', e => {
-      reference = `${': ' + '(us -' + size.usCan + ')'}`;
-      div.textContent += reference;
-    });
     div.addEventListener('mouseout', e => {
       reference = `${size.usCan}`;
       div.textContent = reference;
@@ -200,9 +202,15 @@ littlekids.addEventListener('click', e => {
   });
 });
 bigkids.addEventListener('click', e => {
+  unitus.style.backgroundColor = color_selected;
+  unituk.style.backgroundColor = color_unselected;
+  uniteu.style.backgroundColor = color_unselected;
+  unitin.style.backgroundColor = color_unselected;
+  unitcm.style.backgroundColor = color_unselected;
   while (chart.firstChild) {
     chart.removeChild(chart.firstChild);
   }
+  chartBox.scrollTo(0, 0);
   customer = 'b';
   bigKidSizes.forEach(size => {
     let reference;
@@ -216,10 +224,6 @@ bigkids.addEventListener('click', e => {
     div.style.margin = '1.5ch';
     div.style.display = 'flex';
     div.style.flexWrap = 'wrap';
-    div.addEventListener('mouseover', e => {
-      reference = `${': ' + '(us -' + size.usCan + ')'}`;
-      div.textContent += reference;
-    });
     div.addEventListener('mouseout', e => {
       reference = `${size.usCan}`;
       div.textContent = reference;
@@ -228,9 +232,15 @@ bigkids.addEventListener('click', e => {
   });
 });
 toddlers.addEventListener('click', e => {
+  unitus.style.backgroundColor = color_selected;
+  unituk.style.backgroundColor = color_unselected;
+  uniteu.style.backgroundColor = color_unselected;
+  unitin.style.backgroundColor = color_unselected;
+  unitcm.style.backgroundColor = color_unselected;
   while (chart.firstChild) {
     chart.removeChild(chart.firstChild);
   }
+  chartBox.scrollTo(0, 0);
   customer = 't';
   toddlerSizes.forEach(size => {
     let reference;
@@ -244,10 +254,6 @@ toddlers.addEventListener('click', e => {
     div.style.margin = '1.5ch';
     div.style.display = 'flex';
     div.style.flexWrap = 'wrap';
-    div.addEventListener('mouseover', e => {
-      reference = `${': ' + '(us -' + size.usCan + ')'}`;
-      div.textContent += reference;
-    });
     div.addEventListener('mouseout', e => {
       reference = `${size.usCan}`;
       div.textContent = reference;
@@ -256,9 +262,15 @@ toddlers.addEventListener('click', e => {
   });
 });
 infants.addEventListener('click', e => {
+  unitus.style.backgroundColor = color_selected;
+  unituk.style.backgroundColor = color_unselected;
+  uniteu.style.backgroundColor = color_unselected;
+  unitin.style.backgroundColor = color_unselected;
+  unitcm.style.backgroundColor = color_unselected;
   while (chart.firstChild) {
     chart.removeChild(chart.firstChild);
   }
+  chartBox.scrollTo(0, 0);
   customer = 'i';
   infantSizes.forEach(size => {
     let reference;
@@ -272,10 +284,6 @@ infants.addEventListener('click', e => {
     div.style.margin = '1.5ch';
     div.style.display = 'flex';
     div.style.flexWrap = 'wrap';
-    div.addEventListener('mouseover', e => {
-      reference = `${': ' + '(us -' + size.usCan + ')'}`;
-      div.textContent += reference;
-    });
     div.addEventListener('mouseout', e => {
       reference = `${size.usCan}`;
       div.textContent = reference;
@@ -300,6 +308,7 @@ unitus.addEventListener('click', e => {
       while (chart.firstChild) {
         chart.removeChild(chart.firstChild);
       }
+      chartBox.scrollTo(0, 0);
       womenSizes.forEach(size => {
         var div = document.createElement('div');
         div.style.width = '200px';
@@ -318,6 +327,7 @@ unitus.addEventListener('click', e => {
       while (chart.firstChild) {
         chart.removeChild(chart.firstChild);
       }
+      chartBox.scrollTo(0, 0);
       menSizes.forEach(size => {
         var div = document.createElement('div');
         div.style.width = '200px';
@@ -336,6 +346,7 @@ unitus.addEventListener('click', e => {
       while (chart.firstChild) {
         chart.removeChild(chart.firstChild);
       }
+      chartBox.scrollTo(0, 0);
       littleKidSizes.forEach(size => {
         var div = document.createElement('div');
         div.style.width = '200px';
@@ -354,6 +365,7 @@ unitus.addEventListener('click', e => {
       while (chart.firstChild) {
         chart.removeChild(chart.firstChild);
       }
+      chartBox.scrollTo(0, 0);
       bigKidSizes.forEach(size => {
         var div = document.createElement('div');
         div.style.width = '200px';
@@ -372,6 +384,7 @@ unitus.addEventListener('click', e => {
       while (chart.firstChild) {
         chart.removeChild(chart.firstChild);
       }
+      chartBox.scrollTo(0, 0);
       toddlerSizes.forEach(size => {
         var div = document.createElement('div');
         div.style.width = '200px';
@@ -390,6 +403,7 @@ unitus.addEventListener('click', e => {
       while (chart.firstChild) {
         chart.removeChild(chart.firstChild);
       }
+      chartBox.scrollTo(0, 0);
       infantSizes.forEach(size => {
         var div = document.createElement('div');
         div.style.width = '200px';
@@ -424,6 +438,7 @@ unituk.addEventListener('click', e => {
       while (chart.firstChild) {
         chart.removeChild(chart.firstChild);
       }
+      chartBox.scrollTo(0, 0);
       womenSizes.forEach(size => {
         let reference;
         var div = document.createElement('div');
@@ -451,6 +466,7 @@ unituk.addEventListener('click', e => {
       while (chart.firstChild) {
         chart.removeChild(chart.firstChild);
       }
+      chartBox.scrollTo(0, 0);
       menSizes.forEach(size => {
         let reference;
         var div = document.createElement('div');
@@ -478,6 +494,7 @@ unituk.addEventListener('click', e => {
       while (chart.firstChild) {
         chart.removeChild(chart.firstChild);
       }
+      chartBox.scrollTo(0, 0);
       littleKidSizes.forEach(size => {
         let reference;
         var div = document.createElement('div');
@@ -505,6 +522,7 @@ unituk.addEventListener('click', e => {
       while (chart.firstChild) {
         chart.removeChild(chart.firstChild);
       }
+      chartBox.scrollTo(0, 0);
       bigKidSizes.forEach(size => {
         let reference;
         var div = document.createElement('div');
@@ -532,6 +550,7 @@ unituk.addEventListener('click', e => {
       while (chart.firstChild) {
         chart.removeChild(chart.firstChild);
       }
+      chartBox.scrollTo(0, 0);
       toddlerSizes.forEach(size => {
         let reference;
         var div = document.createElement('div');
@@ -559,6 +578,7 @@ unituk.addEventListener('click', e => {
       while (chart.firstChild) {
         chart.removeChild(chart.firstChild);
       }
+      chartBox.scrollTo(0, 0);
       infantSizes.forEach(size => {
         let reference;
         var div = document.createElement('div');
@@ -602,6 +622,7 @@ uniteu.addEventListener('click', e => {
       while (chart.firstChild) {
         chart.removeChild(chart.firstChild);
       }
+      chartBox.scrollTo(0, 0);
       womenSizes.forEach(size => {
         let reference;
         var div = document.createElement('div');
@@ -629,6 +650,7 @@ uniteu.addEventListener('click', e => {
       while (chart.firstChild) {
         chart.removeChild(chart.firstChild);
       }
+      chartBox.scrollTo(0, 0);
       menSizes.forEach(size => {
         let reference;
         var div = document.createElement('div');
@@ -656,6 +678,7 @@ uniteu.addEventListener('click', e => {
       while (chart.firstChild) {
         chart.removeChild(chart.firstChild);
       }
+      chartBox.scrollTo(0, 0);
       littleKidSizes.forEach(size => {
         let reference;
         var div = document.createElement('div');
@@ -683,6 +706,7 @@ uniteu.addEventListener('click', e => {
       while (chart.firstChild) {
         chart.removeChild(chart.firstChild);
       }
+      chartBox.scrollTo(0, 0);
       bigKidSizes.forEach(size => {
         let reference;
         var div = document.createElement('div');
@@ -710,6 +734,7 @@ uniteu.addEventListener('click', e => {
       while (chart.firstChild) {
         chart.removeChild(chart.firstChild);
       }
+      chartBox.scrollTo(0, 0);
       toddlerSizes.forEach(size => {
         let reference;
         var div = document.createElement('div');
@@ -737,6 +762,7 @@ uniteu.addEventListener('click', e => {
       while (chart.firstChild) {
         chart.removeChild(chart.firstChild);
       }
+      chartBox.scrollTo(0, 0);
       infantSizes.forEach(size => {
         let reference;
         var div = document.createElement('div');
@@ -780,6 +806,7 @@ unitin.addEventListener('click', e => {
       while (chart.firstChild) {
         chart.removeChild(chart.firstChild);
       }
+      chartBox.scrollTo(0, 0);
       womenSizes.forEach(size => {
         let reference;
         var div = document.createElement('div');
@@ -807,6 +834,7 @@ unitin.addEventListener('click', e => {
       while (chart.firstChild) {
         chart.removeChild(chart.firstChild);
       }
+      chartBox.scrollTo(0, 0);
       menSizes.forEach(size => {
         let reference;
         var div = document.createElement('div');
@@ -834,6 +862,7 @@ unitin.addEventListener('click', e => {
       while (chart.firstChild) {
         chart.removeChild(chart.firstChild);
       }
+      chartBox.scrollTo(0, 0);
       littleKidSizes.forEach(size => {
         let reference;
         var div = document.createElement('div');
@@ -861,6 +890,7 @@ unitin.addEventListener('click', e => {
       while (chart.firstChild) {
         chart.removeChild(chart.firstChild);
       }
+      chartBox.scrollTo(0, 0);
       bigKidSizes.forEach(size => {
         let reference;
         var div = document.createElement('div');
@@ -888,6 +918,7 @@ unitin.addEventListener('click', e => {
       while (chart.firstChild) {
         chart.removeChild(chart.firstChild);
       }
+      chartBox.scrollTo(0, 0);
       toddlerSizes.forEach(size => {
         let reference;
         var div = document.createElement('div');
@@ -915,6 +946,7 @@ unitin.addEventListener('click', e => {
       while (chart.firstChild) {
         chart.removeChild(chart.firstChild);
       }
+      chartBox.scrollTo(0, 0);
       infantSizes.forEach(size => {
         let reference;
         var div = document.createElement('div');
@@ -958,6 +990,7 @@ unitcm.addEventListener('click', e => {
       while (chart.firstChild) {
         chart.removeChild(chart.firstChild);
       }
+      chartBox.scrollTo(0, 0);
       womenSizes.forEach(size => {
         let reference;
         var div = document.createElement('div');
@@ -985,6 +1018,7 @@ unitcm.addEventListener('click', e => {
       while (chart.firstChild) {
         chart.removeChild(chart.firstChild);
       }
+      chartBox.scrollTo(0, 0);
       menSizes.forEach(size => {
         let reference;
         var div = document.createElement('div');
@@ -1012,6 +1046,7 @@ unitcm.addEventListener('click', e => {
       while (chart.firstChild) {
         chart.removeChild(chart.firstChild);
       }
+      chartBox.scrollTo(0, 0);
       littleKidSizes.forEach(size => {
         let reference;
         var div = document.createElement('div');
@@ -1039,6 +1074,7 @@ unitcm.addEventListener('click', e => {
       while (chart.firstChild) {
         chart.removeChild(chart.firstChild);
       }
+      chartBox.scrollTo(0, 0);
       bigKidSizes.forEach(size => {
         let reference;
         var div = document.createElement('div');
@@ -1066,6 +1102,7 @@ unitcm.addEventListener('click', e => {
       while (chart.firstChild) {
         chart.removeChild(chart.firstChild);
       }
+      chartBox.scrollTo(0, 0);
       toddlerSizes.forEach(size => {
         let reference;
         var div = document.createElement('div');
@@ -1093,6 +1130,7 @@ unitcm.addEventListener('click', e => {
       while (chart.firstChild) {
         chart.removeChild(chart.firstChild);
       }
+      chartBox.scrollTo(0, 0);
       infantSizes.forEach(size => {
         let reference;
         var div = document.createElement('div');
