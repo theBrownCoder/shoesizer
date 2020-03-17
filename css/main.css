@@ -13,10 +13,22 @@ body {
     background-blend-mode: soft-light;
 }
 
+a {
+    color: #2ba84a;
+}
+
 h1 {
     font-size: 6ch;
     text-align: center;
     margin: 1ch;
+}
+
+#size-notice {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 2ch 6ch;
+    text-align: left;
+    font-size: x-large;
 }
 
 #size-dropdown {
@@ -35,7 +47,6 @@ select {
     height: 500px;
     display: flex;
     overflow: scroll;
-    scrollbar-darkshadow-color: #2ba84a;
 }
 
 #chart {
@@ -83,4 +94,11 @@ button:hover {
 .size-box:hover {
     background-color: tomato;
     color: beige;
+}
+
+footer {
+    height: 100px;
+    background-color: beige;
+    color: black;
+    text-align: center;
 }
